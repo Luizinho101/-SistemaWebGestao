@@ -1,0 +1,30 @@
+@model IEnumerable<dynamic>
+
+<h2>Extrato do Dia</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Status</th>
+            <th>Quantidade</th>
+            <th>Valor Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Status</td>
+                <td>@item.Quantidade</td>
+                <td>@item.ValorTotal.ToString("C")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Botão Adicional na Parte Inferior da Tabela -->
+<div class="text-center mt-3">
+    <a href="@Url.Action("Index", "Boleto")" class="btn btn-primary">Voltar</a>
+</div>
+
+

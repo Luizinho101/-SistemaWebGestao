@@ -1,0 +1,22 @@
+@model SistemaWebGestao.Models.Contribuicao
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Comprovante de Recebimento</title>
+</head>
+<body>
+    <h1>Comprovante de Recebimento</h1>
+
+    <p>Recibo: <strong>@Model.Recibo</strong></p>
+    <p>Nome do Mensageiro: <strong>@Model.Mensageiro?.Nome ?? "N/A"</strong></p>
+    <p>Valor: <strong>@Model.Valor.ToString("C")</strong></p>
+    <p>Data de Recebimento: <strong>@Model.DataRecebimento?.ToString("dd/MM/yyyy")</strong></p>
+    <p>ID do Contribuinte: <strong>@Model.Contribuinte.Id</strong></p>
+    <p>Nome do Contribuinte: <strong>@Model.Contribuinte.Nome</strong></p>
+
+    <a href="@Url.Action("Index", "Boleto")" class="btn btn-primary">Voltar para Lista de Boletos</a>
+</body>
+</html>
+
+

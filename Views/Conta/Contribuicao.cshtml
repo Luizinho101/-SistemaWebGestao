@@ -1,0 +1,52 @@
+@model SistemaWebGestao.Models.Contribuicao
+
+@{
+    ViewData["Title"] = "Preencher Contribuição";
+}
+
+<h2>Preencher Contribuição</h2>
+
+<form asp-action="Contribuicao" method="post">
+    <div class="form-group">
+        <label for="recibo">Número do Recibo:</label>
+        <input type="text" class="form-control" id="recibo" name="Recibo" required />
+    </div>
+    
+    <div class="form-group">
+        <label for="valor">Valor (R$):</label>
+        <input type="number" step="0.01" class="form-control" id="valor" name="Valor" required />
+    </div>
+    
+    <div class="form-group">
+        <label for="dataPrevista">Data Prevista:</label>
+        <input type="date" class="form-control" id="dataPrevista" name="DataPrevista" required />
+    </div>
+    
+    <div class="form-group">
+        <label for="status">Status:</label>
+        <select class="form-control" id="status" name="Status">
+            <option value="Pendente">Pendente</option>
+            <option value="Recebido">Recebido</option>
+            <option value="Cancelado">Cancelado</option>
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label for="contribuinteId">Contribuinte ID:</label>
+        <input type="number" class="form-control" id="contribuinteId" name="ContribuinteId" required />
+    </div>
+    
+    <div class="form-group">
+        <label for="tipoPagamentoId">Tipo de Pagamento ID:</label>
+        <input type="number" class="form-control" id="tipoPagamentoId" name="TipoPagamentoId" required />
+    </div>
+    
+    <div class="form-group">
+        <label for="mensageiroId">Mensageiro ID:</label>
+        <input type="number" class="form-control" id="mensageiroId" name="MensageiroId" />
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Gerar Boleto</button>
+</form>
+
+

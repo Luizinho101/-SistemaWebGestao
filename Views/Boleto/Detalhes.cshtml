@@ -1,0 +1,15 @@
+@model SistemaWebGestao.Models.Contribuicao
+
+@{
+    ViewData["Title"] = "Detalhes do Boleto";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <p><strong>Número:</strong> @Model.Recibo</p>
+    <p><strong>Valor:</strong> @Model.Valor</p>
+    <p><strong>Status:</strong> @Model.Status</p>
+    <p><strong>Contribuinte:</strong> @Model.Contribuinte.Nome</p>
+    <p><strong>Tipo de Pagamento:</strong> @Model.TipoPagamento.Nome</p>
+</div>
