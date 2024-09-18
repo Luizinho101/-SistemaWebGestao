@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="~/css/cor_main.css" />
     <link rel="stylesheet" href="~/css/main.css" />
     <link rel="stylesheet" href="~/css/cadastro.css" />
-    <!-- Adicione o Tailwind CSS CDN se ainda não estiver incluído -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="">
@@ -28,7 +27,6 @@
         <p class="mb-2"><strong>Tipo de Pagamento:</strong> @Model.TipoPagamento.Nome</p>
     </div>
 
-    <!-- Botão Adicional -->
     <div class="text-center mt-4">
         <a href="@Url.Action("Index", "Boleto")" class="btn btn-primary px-4 py-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-600">Voltar</a>
     </div>

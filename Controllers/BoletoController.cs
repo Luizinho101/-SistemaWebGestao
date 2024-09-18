@@ -17,7 +17,6 @@ namespace SistemaWebGestao.Controllers
             _context = context;
         }
 
-        // Tela de boletos
         public async Task<IActionResult> Index()
         {
             var mensageiroId = HttpContext.Session.GetString("MensageiroId");
@@ -32,7 +31,7 @@ namespace SistemaWebGestao.Controllers
                 .Include(c => c.TipoPagamento)
                 .Include(c => c.Mensageiro)
                 .Where(c => c.MensageiroId == int.Parse(mensageiroId))
-                .OrderByDescending(c => c.DataPrevista) // Ordena por data prevista, mais recente primeiro
+                .OrderByDescending(c => c.DataPrevista)
                 .ToListAsync();
             ViewData["ShowContribuinteNav"] = true;
             return View(boletos);
@@ -53,13 +52,11 @@ namespace SistemaWebGestao.Controllers
             return View(boleto);
         }
 
-        // GET: Exibe o formulário de preenchimento do boleto
         public IActionResult PreencherBoleto()
         {
             return View();
         }
 
-        // POST: Recebe os dados do boleto preenchido
         [HttpPost]
         public IActionResult PreencherBoleto(Contribuicao model)
         {
@@ -68,13 +65,12 @@ namespace SistemaWebGestao.Controllers
                 _context.Contribuicoes.Add(model);
                 _context.SaveChanges();
 
-                return RedirectToAction("ConfirmacaoBoleto"); // Redirecionar após preencher
+                return RedirectToAction("ConfirmacaoBoleto"); 
             }
 
             return View(model);
         }
 
-        // GET: Exibe uma mensagem de confirmação após o envio do boleto
         public IActionResult ConfirmacaoBoleto()
         {
             return View();
@@ -92,7 +88,6 @@ namespace SistemaWebGestao.Controllers
                     return NotFound();
                 }
 
-                // Verifica se o status atual é "Pendente"
                 if (boleto.Status == "Pendente")
                 {
                     boleto.Status = "Cancelado";
@@ -114,7 +109,7 @@ namespace SistemaWebGestao.Controllers
        [HttpPost]
         public IActionResult Recebido(int id)
         {
-            // Buscar o boleto com base no ID
+           
             var boleto = _context.Contribuicoes
                 .Include(c => c.Contribuinte)
                 .Include(c => c.TipoPagamento)
@@ -125,35 +120,35 @@ namespace SistemaWebGestao.Controllers
                 return NotFound();
             }
 
-            // Verificar se o status atual é "Pendente"
+           
             if (boleto.Status != "Pendente")
             {
-                // Se o status não for "Pendente", simplesmente retornar sem executar a ação
+              
                 return RedirectToAction("Index");
             }
 
-            // Criar um novo registro em MovimentoDiario
+        
             var movimentoDiario = new MovimentoDiario
             {
-                Recibo = boleto.Recibo,  // Certifique-se de que o Recibo está correto
+                Recibo = boleto.Recibo, 
                 Valor = boleto.Valor,
                 DataMovimento = DateTime.Now,
                 Status = "Recebido",
                 ContribuinteId = boleto.ContribuinteId,
                 TipoPagamentoId = boleto.TipoPagamentoId,
                 MensageiroId = boleto.MensageiroId,
-                ContribuicaoId = boleto.Id  // Certifique-se de que o ContribuicaoId é correto
+                ContribuicaoId = boleto.Id 
             };
 
             _context.MovimentoDiarios.Add(movimentoDiario);
 
-            // Atualizar o status do boleto para 'Recebido'
+          
             boleto.Status = "Recebido";
 
-            // Salvar alterações no banco de dados
+           
             _context.SaveChanges();
 
-            // Redirecionar para uma página que mostra o comprovante do recibo
+           
             return RedirectToAction("GerarComprovante", new { id = boleto.Id });
         }
 
@@ -161,7 +156,7 @@ namespace SistemaWebGestao.Controllers
 
         public IActionResult Comprovante(int id)
         {
-            // Buscar o boleto novamente para gerar o comprovante
+           
             var boleto = _context.Contribuicoes
                 .Include(c => c.Contribuinte)
                 .Include(c => c.TipoPagamento)
@@ -172,7 +167,7 @@ namespace SistemaWebGestao.Controllers
                 return NotFound();
             }
 
-            // Retorna a visualização com os dados do boleto (comprovante)
+          
             return View(boleto);
         }
 

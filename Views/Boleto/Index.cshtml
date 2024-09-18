@@ -38,16 +38,14 @@
                         <td>@boleto.TipoPagamento.Nome</td>
                         <td>@(boleto.Mensageiro != null ? boleto.Mensageiro.Nome : "N/A")</td>
                         <td>
-                            <!-- Botão para visualizar detalhes -->
+                           
                             <a href="@Url.Action("Detalhes", "Boleto", new { id = boleto.Id })" class="btn btn-primary">Ver Detalhes</a>
                             
-                            <!-- Botão Recebido -->
                             <form asp-action="Recebido" method="post" style="display:inline;">
                                 <input type="hidden" name="id" value="@boleto.Id" />
                                 <button type="submit" class="btn btn-success">Recebido</button>
                             </form>
                             
-                            <!-- Botão Cancelado -->
                             <form asp-action="Cancelado" method="post" style="display:inline;">
                                 <input type="hidden" name="id" value="@boleto.Id" />
                                 <button type="submit" class="btn btn-danger">Cancelar</button>
