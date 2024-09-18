@@ -1,0 +1,33 @@
+/* Estilo para a div .login */
+.login {
+    width: 90%; /* Ajuste a largura para que ocupe 90% da tela em telas menores */
+    max-width: 400px; /* Define a largura máxima para evitar que fique muito grande em telas grandes */
+    height: auto; /* Ajusta a altura automaticamente */
+    background-color: #820AD1; /* Exemplo de cor */
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza vertical e horizontalmente */
+    display: flex;
+    flex-direction: column; /* Alinha os itens verticalmente */
+    padding: 20px; /* Adiciona espaçamento interno */
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+}
+
+/* Estilo para html e body */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+/* Media queries para responsividade */
+@media (max-width: 576px) {
+    .login {
+        width: 95%; /* Ajusta a largura para que ocupe 95% da tela em dispositivos muito pequenos */
+        height: auto; /* Mantém a altura automática */
+        padding: 10px; /* Reduz o padding para se ajustar melhor em telas pequenas */
+    }
+}

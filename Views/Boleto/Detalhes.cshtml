@@ -4,12 +4,34 @@
     ViewData["Title"] = "Detalhes do Boleto";
 }
 
-<h1>@ViewData["Title"]</h1>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - SistemaWebGestao</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/cor_main.css" />
+    <link rel="stylesheet" href="~/css/main.css" />
+    <link rel="stylesheet" href="~/css/cadastro.css" />
+    <!-- Adicione o Tailwind CSS CDN se ainda não estiver incluído -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="">
+    <h1 class="text-2xl font-bold mb-4 ">@ViewData["Title"]</h1>
 
-<div>
-    <p><strong>Número:</strong> @Model.Recibo</p>
-    <p><strong>Valor:</strong> @Model.Valor</p>
-    <p><strong>Status:</strong> @Model.Status</p>
-    <p><strong>Contribuinte:</strong> @Model.Contribuinte.Nome</p>
-    <p><strong>Tipo de Pagamento:</strong> @Model.TipoPagamento.Nome</p>
-</div>
+    <div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
+        <p class="mb-2"><strong>Número:</strong> @Model.Recibo</p>
+        <p class="mb-2"><strong>Valor:</strong> @Model.Valor.ToString("C")</p>
+        <p class="mb-2"><strong>Status:</strong> @Model.Status</p>
+        <p class="mb-2"><strong>Contribuinte:</strong> @Model.Contribuinte.Nome</p>
+        <p class="mb-2"><strong>Tipo de Pagamento:</strong> @Model.TipoPagamento.Nome</p>
+    </div>
+
+    <!-- Botão Adicional -->
+    <div class="text-center mt-4">
+        <a href="@Url.Action("Index", "Boleto")" class="btn btn-primary px-4 py-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-600">Voltar</a>
+    </div>
+</body>
+</html>
+

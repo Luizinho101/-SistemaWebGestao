@@ -1,30 +1,49 @@
 @model IEnumerable<dynamic>
 
-<h2>Extrato do Dia</h2>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extrato do Dia</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/cor_main.css" />
+    <link rel="stylesheet" href="~/css/main.css" />
+    <link rel="stylesheet" href="~/css/cadastro.css" />
+    <!-- Adicione o Tailwind CSS CDN se ainda não estiver incluído -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="">
+    <h2 class="text-xl font-bold mb-4">Extrato do Dia</h2>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Status</th>
-            <th>Quantidade</th>
-            <th>Valor Total</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.Status</td>
-                <td>@item.Quantidade</td>
-                <td>@item.ValorTotal.ToString("C")</td>
-            </tr>
-        }
-    </tbody>
-</table>
+    <div class="overflow-x-auto">
+        <table class="table-auto w-full bg-white border border-gray-200 rounded-lg shadow-md">
+            <thead class="bg-gray-100">
+                <tr class="text-left border-b border-gray-200">
+                    <th class="p-2">Status</th>
+                    <th class="p-2">Quantidade</th>
+                    <th class="p-2">Valor Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="border-b border-gray-200">
+                        <td class="p-2">@item.Status</td>
+                        <td class="p-2">@item.Quantidade</td>
+                        <td class="p-2">@item.ValorTotal.ToString("C")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 
-<!-- Botão Adicional na Parte Inferior da Tabela -->
-<div class="text-center mt-3">
-    <a href="@Url.Action("Index", "Boleto")" class="btn btn-primary">Voltar</a>
-</div>
+    <!-- Botão Adicional na Parte Inferior da Tabela -->
+    <div class="text-center mt-4">
+        <a href="@Url.Action("Index", "Boleto")" class="btn btn-primary px-4 py-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-600">Voltar</a>
+    </div>
+</body>
+</html>
+
 
 

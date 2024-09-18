@@ -20,11 +20,7 @@ namespace SistemaWebGestao.Controllers
         // Tela de login
         public IActionResult Entrar()
         {
-            return View();
-        }
-
-        public IActionResult EntrarCotribuinte()
-        {
+            ViewData["ShowContribuinteNav"] = false; // Define para não mostrar o item de navegação
             return View();
         }
 
@@ -90,37 +86,9 @@ namespace SistemaWebGestao.Controllers
             return View(mensageiro);
         }
 
-        // POST: Recebe os dados do login do contribuinte
-        [HttpPost]
-        public IActionResult EntrarContribuinte(int id, string telefone)
-        {
-            if (ModelState.IsValid)
-            {
-                // Lógica para verificar se o contribuinte existe no banco de dados
-                var contribuinte = _context.Contribuintes
-                    .FirstOrDefault(c => c.Id == id && c.Telefone == telefone);
+       
 
-                if (contribuinte != null)
-                {
-                    // Login bem-sucedido
-                    return RedirectToAction("Contribuicao"); // Redirecionar após o login
-                }
-                else
-                {
-                    TempData["MensagemErro"] = "ID ou Telefone incorreto.";
-                }
-            }
-
-            return View();
-        }
-
-        // GET: Exibe o formulário de cadastro de contribuinte
-        public IActionResult CadastrarContribuinte()
-        {
-            return View();
-        }
-
-        // GET: Exibe o formulário para contribuição
+       
         public IActionResult Contribuicao()
         {
             var model = new Contribuicao

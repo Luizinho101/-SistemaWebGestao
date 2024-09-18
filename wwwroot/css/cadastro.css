@@ -1,0 +1,43 @@
+.table-responsive {
+    overflow-x: auto; /* Adiciona uma barra de rolagem horizontal se necessário */
+}
+
+.table {
+    width: 100%; /* Faz a tabela ocupar a largura completa do contêiner pai */
+    border-collapse: collapse; /* Remove o espaçamento entre células */
+}
+
+.table th, .table td {
+    padding: 0.75rem; /* Adiciona um padding para tornar as células mais legíveis */
+    text-align: left; /* Alinha o texto à esquerda */
+    border: 1px solid #dee2e6; /* Adiciona uma borda para separar as células */
+}
+
+/* Estilos para os botões */
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilo dos botões específicos */
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+}

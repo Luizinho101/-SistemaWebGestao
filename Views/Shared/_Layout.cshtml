@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - SistemaWebGestao</title>
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/footer.css" />
+    <link rel="stylesheet" href="~/css/header.css" />
+    <link rel="stylesheet" href="~/css/cor_main.css" />
+    <link rel="stylesheet" href="~/css/nav_link_white.css" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -13,7 +17,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-md navbar-dark header">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">SistemaWebGestao</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,11 +25,12 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                       
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Conta" asp-action="EntrarCotribuinte">Contribuinte</a>
-                        </li>
-                        <!-- Outros links de navegação -->
+                        @if (ViewData["ShowContribuinteNav"] != null && (bool)ViewData["ShowContribuinteNav"])
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link nav-link-white" asp-controller="Conta" asp-action="Entrar">Sair</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>
@@ -36,14 +41,15 @@
             @RenderBody()
         </main>
     </div>
-    <footer class="border-top pt-3">
-        <div class="container">
+    <footer class="border-top pt-3 footer">
+        <div class="container nav-link-white">
             <p>&copy; 2024 - SistemaWebGestao</p>
         </div>
     </footer>
     @RenderSection("Scripts", required: false)
 </body>
 </html>
+
 
 
 

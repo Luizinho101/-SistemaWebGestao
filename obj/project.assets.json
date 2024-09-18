@@ -4111,11 +4111,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\luiza\\Programacao\\Versao_para_enviar\\SistemaWebGestao\\SistemaWebGestao.csproj",
+      "projectUniqueName": "C:\\Users\\luiza\\Programacao\\Versao_git\\SistemaWebGestao\\SistemaWebGestao.csproj",
       "projectName": "SistemaWebGestao",
-      "projectPath": "C:\\Users\\luiza\\Programacao\\Versao_para_enviar\\SistemaWebGestao\\SistemaWebGestao.csproj",
+      "projectPath": "C:\\Users\\luiza\\Programacao\\Versao_git\\SistemaWebGestao\\SistemaWebGestao.csproj",
       "packagesPath": "C:\\Users\\luiza\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\luiza\\Programacao\\Versao_para_enviar\\SistemaWebGestao\\obj\\",
+      "outputPath": "C:\\Users\\luiza\\Programacao\\Versao_git\\SistemaWebGestao\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\luiza\\AppData\\Roaming\\NuGet\\NuGet.Config"

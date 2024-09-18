@@ -9,24 +9,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewData["Title"] - SistemaWebGestao</title>
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/cor_main.css" />
+    <link rel="stylesheet" href="~/css/main.css" />
+    <link rel="stylesheet" href="~/css/login.css" />
+    
 </head>
 <body>
-    <main role="main" class="pb-3">
-        <div class="container">
+    <main role="main" class="pb-3 cor-main login">
+        <div class="container ">
             <h2>Login</h2>
             <form asp-action="Entrar" method="post">
-                <div class="form-group">
+                <div class="form-group mb-3">
                     <label for="telefone">Número de Celular:</label>
                     <input type="text" class="form-control" id="telefone" name="telefone" required />
                 </div>
-                <div class="form-group">
+                <div class="form-group mb-3">
                     <label for="senha">Senha:</label>
                     <input type="password" class="form-control" id="senha" name="senha" required />
                 </div>
                 <!-- Botões de login e cadastro -->
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary d-inline-block">Entrar</button>
-                    <a href="@Url.Action("Cadastrar", "Conta")" class="btn btn-secondary d-inline-block">Cadastrar</a>
+                <div class="form-group mb-3">
+                    <button type="submit" class="btn cor-botao d-inline-block">Entrar</button>
+                    <a href="@Url.Action("Cadastrar", "Conta")" class="btn cor-botao d-inline-block">Cadastrar</a>
                 </div>
 
                 @if (TempData["MensagemErro"] != null)

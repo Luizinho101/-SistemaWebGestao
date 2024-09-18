@@ -30,9 +30,11 @@ namespace SistemaWebGestao.Controllers
             var boletos = await _context.Contribuicoes
                 .Include(c => c.Contribuinte)
                 .Include(c => c.TipoPagamento)
+                .Include(c => c.Mensageiro)
                 .Where(c => c.MensageiroId == int.Parse(mensageiroId))
+                .OrderByDescending(c => c.DataPrevista) // Ordena por data prevista, mais recente primeiro
                 .ToListAsync();
-
+            ViewData["ShowContribuinteNav"] = true;
             return View(boletos);
         }
 
@@ -47,7 +49,7 @@ namespace SistemaWebGestao.Controllers
             {
                 return NotFound();
             }
-
+            ViewData["ShowContribuinteNav"] = true;
             return View(boleto);
         }
 
@@ -90,8 +92,13 @@ namespace SistemaWebGestao.Controllers
                     return NotFound();
                 }
 
-                boleto.Status = "Cancelado";
-                _context.SaveChanges();
+                // Verifica se o status atual é "Pendente"
+                if (boleto.Status == "Pendente")
+                {
+                    boleto.Status = "Cancelado";
+                    _context.SaveChanges();
+                }
+                
 
                 return RedirectToAction("Index");
             }
@@ -101,6 +108,7 @@ namespace SistemaWebGestao.Controllers
                 return BadRequest("Ocorreu um erro ao salvar as alterações.");
             }
         }
+
 
        
        [HttpPost]
@@ -115,6 +123,13 @@ namespace SistemaWebGestao.Controllers
             if (boleto == null)
             {
                 return NotFound();
+            }
+
+            // Verificar se o status atual é "Pendente"
+            if (boleto.Status != "Pendente")
+            {
+                // Se o status não for "Pendente", simplesmente retornar sem executar a ação
+                return RedirectToAction("Index");
             }
 
             // Criar um novo registro em MovimentoDiario
@@ -141,6 +156,8 @@ namespace SistemaWebGestao.Controllers
             // Redirecionar para uma página que mostra o comprovante do recibo
             return RedirectToAction("GerarComprovante", new { id = boleto.Id });
         }
+
+
 
         public IActionResult Comprovante(int id)
         {

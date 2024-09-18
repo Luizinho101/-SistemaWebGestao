@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RVCReCKj1L9E1J+gDGg/5Aw3FtAJI0FeWOsExRA3HF1Gg5vyOCMj7kIxeniwTKA3BFy+xi7r3qIXOaJBXHC+Bg==",
+  "dgSpecHash": "Q4ARCP5jFuD5RvwwMeDRcAmNm2+HVgiMfEC8rKzW5SaTrDcu+be9/H67ZpDD/pnlasKtjNbCGE4GGg0zA8mHsw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\luiza\\Programacao\\Versao_para_enviar\\SistemaWebGestao\\SistemaWebGestao.csproj",
+  "projectFilePath": "C:\\Users\\luiza\\Programacao\\Versao_git\\SistemaWebGestao\\SistemaWebGestao.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\luiza\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\luiza\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

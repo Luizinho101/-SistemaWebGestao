@@ -1,55 +1,81 @@
 @model IEnumerable<SistemaWebGestao.Models.Contribuicao>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Número do Recibo</th>
-            <th>Valor</th>
-            <th>Status</th>
-            <th>Data Prevista</th>
-            <th>Nome do Contribuinte</th>
-            <th>Tipo de Pagamento</th>
-            <th>Nome do Mensageiro</th>
-            <th>Ações</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var boleto in Model)
-        {
-            <tr>
-                <td>@boleto.Recibo</td>
-                <td>@boleto.Valor.ToString("C")</td>
-                <td>@boleto.Status</td>
-                <td>@boleto.DataPrevista.ToString("dd/MM/yyyy")</td>
-                <td>@boleto.Contribuinte.Nome</td>
-                <td>@boleto.TipoPagamento.Nome</td>
-                <td>@boleto.Mensageiro?.Nome</td> <!-- Verifique se o Mensageiro não é nulo -->
-                <td>
-                    <!-- Botão para visualizar detalhes -->
-                    <a href="@Url.Action("Detalhes", "Boleto", new { id = boleto.Id })" class="btn btn-primary">Ver Detalhes</a>
-                    
-                    <!-- Botão Recebido -->
-                    <form asp-action="Recebido" method="post" style="display:inline;">
-                        <input type="hidden" name="id" value="@boleto.Id" />
-                        <button type="submit" class="btn btn-success">Recebido</button>
-                    </form>
-                    
-                    <!-- Botão Cancelado -->
-                    <form asp-action="Cancelado" method="post" style="display:inline;">
-                        <input type="hidden" name="id" value="@boleto.Id" />
-                        <button type="submit" class="btn btn-danger">Cancelar</button>
-                    </form>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - SistemaWebGestao</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/cor_main.css" />
+    <link rel="stylesheet" href="~/css/main.css" />
+    <link rel="stylesheet" href="~/css/cadastro.css" />
+</head>
+<body>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Número do Recibo</th>
+                    <th>Valor</th>
+                    <th>Status</th>
+                    <th>Data Prevista</th>
+                    <th>Nome do Contribuinte</th>
+                    <th>Tipo de Pagamento</th>
+                    <th>Nome do Mensageiro</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var boleto in Model)
+                {
+                    <tr>
+                        <td>@boleto.Recibo</td>
+                        <td>@boleto.Valor.ToString("C")</td>
+                        <td>@boleto.Status</td>
+                        <td>@boleto.DataPrevista.ToString("dd/MM/yyyy")</td>
+                        <td>@boleto.Contribuinte.Nome</td>
+                        <td>@boleto.TipoPagamento.Nome</td>
+                        <td>@(boleto.Mensageiro != null ? boleto.Mensageiro.Nome : "N/A")</td>
+                        <td>
+                            <!-- Botão para visualizar detalhes -->
+                            <a href="@Url.Action("Detalhes", "Boleto", new { id = boleto.Id })" class="btn btn-primary">Ver Detalhes</a>
+                            
+                            <!-- Botão Recebido -->
+                            <form asp-action="Recebido" method="post" style="display:inline;">
+                                <input type="hidden" name="id" value="@boleto.Id" />
+                                <button type="submit" class="btn btn-success">Recebido</button>
+                            </form>
+                            
+                            <!-- Botão Cancelado -->
+                            <form asp-action="Cancelado" method="post" style="display:inline;">
+                                <input type="hidden" name="id" value="@boleto.Id" />
+                                <button type="submit" class="btn btn-danger">Cancelar</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 
-<!-- Botão Adicional na Parte Inferior da Tabela -->
-<div class="text-center mt-3">
-    <!-- Certifique-se de que o Id do Mensageiro esteja disponível -->
-    <a href="@Url.Action("FinalizarTrabalho", "Boleto", new { mensageiroId = Model.FirstOrDefault()?.MensageiroId })" class="btn btn-primary">Finalizar trabalho</a>
-</div>
+    <!-- Botão Adicional na Parte Inferior da Tabela -->
+    <div class="text-center mt-3">
+        @if (Model != null && Model.Any() && Model.FirstOrDefault()?.Mensageiro != null)
+        {
+            var mensageiroId = Model.FirstOrDefault()?.Mensageiro.Id ?? 0; // Define um valor padrão
+            <a href="@Url.Action("FinalizarTrabalho", "Boleto", new { mensageiroId = mensageiroId })" class="btn btn-primary">Finalizar trabalho</a>
+        }
+        else
+        {
+            <p>Não é possível recuperar o ID do mensageiro.</p>
+        }
+    </div>
+</body>
+</html>
+
+
+
 
 
 

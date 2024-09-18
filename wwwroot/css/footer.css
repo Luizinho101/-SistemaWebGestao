@@ -1,0 +1,20 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o body preencha a tela inteira */
+    margin: 0; /* Remove margens padrão */
+}
+
+main {
+    flex: 1; /* Faz com que o main cresça e ocupe o espaço disponível */
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Garante que o footer ocupe toda a largura da tela */
+    background-color: #820AD1;
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+}

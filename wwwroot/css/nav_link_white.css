@@ -1,0 +1,7 @@
+.nav-link-white {
+    color: white !important;
+}
+
+.nav-link-white:hover {
+    color: #ccc !important; /* Opção de cor para hover, caso queira algo diferente */
+}

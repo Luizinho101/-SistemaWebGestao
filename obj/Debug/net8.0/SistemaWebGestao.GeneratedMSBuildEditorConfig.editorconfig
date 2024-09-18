@@ -9,75 +9,71 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SistemaWebGestao
 build_property.RootNamespace = SistemaWebGestao
-build_property.ProjectDir = C:\Users\luiza\Programacao\Versao_para_enviar\SistemaWebGestao\
+build_property.ProjectDir = C:\Users\luiza\Programacao\Versao_git\SistemaWebGestao\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\luiza\Programacao\Versao_para_enviar\SistemaWebGestao
+build_property.MSBuildProjectDirectory = C:\Users\luiza\Programacao\Versao_git\SistemaWebGestao
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/luiza/Programacao/Versao_para_enviar/SistemaWebGestao/Views/Boleto/Boleto.cshtml]
+[C:/Users/luiza/Programacao/Versao_git/SistemaWebGestao/Views/Boleto/Boleto.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9sZXRvXEJvbGV0by5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/luiza/Programacao/Versao_para_enviar/SistemaWebGestao/Views/Boleto/Detalhes.cshtml]
+[C:/Users/luiza/Programacao/Versao_git/SistemaWebGestao/Views/Boleto/Detalhes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9sZXRvXERldGFsaGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/luiza/Programacao/Versao_para_enviar/SistemaWebGestao/Views/Boleto/FinalizarTrabalho.cshtml]
+[C:/Users/luiza/Programacao/Versao_git/SistemaWebGestao/Views/Boleto/FinalizarTrabalho.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9sZXRvXEZpbmFsaXphclRyYWJhbGhvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/luiza/Programacao/Versao_para_enviar/SistemaWebGestao/Views/Boleto/GerarComprovante.cshtml]
+[C:/Users/luiza/Programacao/Versao_git/SistemaWebGestao/Views/Boleto/GerarComprovante.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9sZXRvXEdlcmFyQ29tcHJvdmFudGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/luiza/Programacao/Versao_para_enviar/SistemaWebGestao/Views/Boleto/Index.cshtml]
+[C:/Users/luiza/Programacao/Versao_git/SistemaWebGestao/Views/Boleto/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9sZXRvXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/luiza/Programacao/Versao_para_enviar/SistemaWebGestao/Views/Boleto/Recebido.cshtml]
+[C:/Users/luiza/Programacao/Versao_git/SistemaWebGestao/Views/Boleto/Recebido.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9sZXRvXFJlY2ViaWRvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/luiza/Programacao/Versao_para_enviar/SistemaWebGestao/Views/Conta/Cadastrar.cshtml]
+[C:/Users/luiza/Programacao/Versao_git/SistemaWebGestao/Views/Conta/Cadastrar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFcQ2FkYXN0cmFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/luiza/Programacao/Versao_para_enviar/SistemaWebGestao/Views/Conta/Contribuicao.cshtml]
+[C:/Users/luiza/Programacao/Versao_git/SistemaWebGestao/Views/Conta/Contribuicao.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFcQ29udHJpYnVpY2FvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/luiza/Programacao/Versao_para_enviar/SistemaWebGestao/Views/Conta/ContribuicaoSucesso.cshtml]
+[C:/Users/luiza/Programacao/Versao_git/SistemaWebGestao/Views/Conta/ContribuicaoSucesso.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFcQ29udHJpYnVpY2FvU3VjZXNzby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/luiza/Programacao/Versao_para_enviar/SistemaWebGestao/Views/Conta/Entrar.cshtml]
+[C:/Users/luiza/Programacao/Versao_git/SistemaWebGestao/Views/Conta/Entrar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFcRW50cmFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/luiza/Programacao/Versao_para_enviar/SistemaWebGestao/Views/Conta/EntrarCotribuinte.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFcRW50cmFyQ290cmlidWludGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/luiza/Programacao/Versao_para_enviar/SistemaWebGestao/Views/Shared/Error.cshtml]
+[C:/Users/luiza/Programacao/Versao_git/SistemaWebGestao/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/luiza/Programacao/Versao_para_enviar/SistemaWebGestao/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/luiza/Programacao/Versao_git/SistemaWebGestao/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/luiza/Programacao/Versao_para_enviar/SistemaWebGestao/Views/_ViewImports.cshtml]
+[C:/Users/luiza/Programacao/Versao_git/SistemaWebGestao/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/luiza/Programacao/Versao_para_enviar/SistemaWebGestao/Views/_ViewStart.cshtml]
+[C:/Users/luiza/Programacao/Versao_git/SistemaWebGestao/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/luiza/Programacao/Versao_para_enviar/SistemaWebGestao/Views/Shared/_Layout.cshtml]
+[C:/Users/luiza/Programacao/Versao_git/SistemaWebGestao/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-h5iclqy4zd
